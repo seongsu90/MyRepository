@@ -17,7 +17,7 @@ public class WhileExample6 {
 			System.out.println("--------------------------------");
 			System.out.print("선택: ");
 			}
-			keyCode = System.in.read();
+			keyCode = System.in.read(); // 임시 break 포인트
 			
 			if(keyCode ==49)
 			{
