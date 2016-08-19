@@ -1,0 +1,18 @@
+package ch05.exam01;
+
+public class StringEquals {
+
+	public static void main(String[] args) {
+		String name1 = "자바";
+		String name2 = "자바";
+		String name3 = new String("자바");
+		
+		//객체를 비교하는 연산자 ==
+		System.out.println(name1 == name2);
+		System.out.println(name1 == name3);
+		//문자열을 비교하는 연산자는 .equals
+		System.out.println(name1.equals(name2));
+		System.out.println(name1.equals(name3));
+	}
+
+}
