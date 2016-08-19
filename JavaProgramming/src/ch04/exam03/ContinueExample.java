@@ -19,8 +19,6 @@ public class ContinueExample {
 					System.out.println(num);
 			
 			
-					
-			
 		}
 	}
 
