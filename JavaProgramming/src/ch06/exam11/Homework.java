@@ -42,9 +42,9 @@ public class Homework {
 				System.out.println("번호\t제목\t글쓴이\t조회수");
 				System.out.println("***************************************");
 				
-				for ( String[] art : article ) {
+				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art[0] + "\t" + art[1] + "\t" + art[2] + "\t   " + art[3]);
+						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hitNum);
 				}
 				
 				System.out.println("***************************************");
@@ -63,7 +63,7 @@ public class Homework {
 				// 비어있는 배열을 찾아서 번호, 제목, 글쓴이, 조회수(0), 내용을 입력한다.
 				for ( int i = 0 ; i < article.length ; i++ ) {
 					if( article[i] == null ) {
-						String[] art = { String.valueOf(i), title, writer, "0", content };
+						Article art = new Article(i,title,writer,content,0);
 						article[i] = art;
 						break;
 					}
@@ -76,7 +76,7 @@ public class Homework {
 				boolean articleIs = false;
 				
 				// 목록에 글이 없으면 contentIs가 false가 되고 있으면 true가 된다.
-				for ( String[] noArticle : article ) {
+				for ( Article noArticle : article ) {
 					if ( noArticle != null ) {
 						articleIs = true;
 					}
@@ -94,9 +94,9 @@ public class Homework {
 				System.out.println("번호\t제목\t글쓴이\t조회수");
 				System.out.println("***************************************");
 				
-				for ( String[] art : article ) {
+				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art[0] + "\t" + art[1] + "\t" + art[2] + "\t   " + art[3]);
+						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hitNum);
 				}
 				
 				System.out.println("***************************************");
@@ -113,15 +113,15 @@ public class Homework {
 					System.out.println("입력하신 번호에 해당하는 글이 없습니다. " );
 				} else {
 					// 조회수 1 증가
-					article[num][3] = String.valueOf( 1 + Integer.parseInt(article[num][3]) );
+					article[num].hitNum +=1;
 
 					// 번호, 제목, 글쓴이, 조회수, 내용 출력
-					System.out.println("번호 : " + article[num][0]);
-					System.out.println("제목 : " + article[num][1]);
-					System.out.println("글쓴이 : " + article[num][2]);
-					System.out.println("조회수 : " + article[num][3]);
+					System.out.println("번호 : " + article[num].no);
+					System.out.println("제목 : " + article[num].title);
+					System.out.println("글쓴이 : " + article[num].writer);
+					System.out.println("조회수 : " + article[num].hitNum);
 					System.out.println("내용 : ");
-					System.out.println(article[num][4]);
+					System.out.println(article[num].content);
 				}
 				
 			} else if ( choice.equals("4") ) {
@@ -131,7 +131,7 @@ public class Homework {
 				boolean articleIs = false;
 				
 				// 목록에 글이 없으면 contentIs가 false가 되고 있으면 true가 된다.
-				for ( String[] noArticle : article ) {
+				for ( Article noArticle : article ) {
 					if ( noArticle != null ) {
 						articleIs = true;
 					}
@@ -149,9 +149,9 @@ public class Homework {
 				System.out.println("번호\t제목\t글쓴이\t조회수");
 				System.out.println("***************************************");
 				
-				for ( String[] art : article ) {
+				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art[0] + "\t" + art[1] + "\t" + art[2] + "\t   " + art[3]);
+						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hitNum);
 				}
 				
 				System.out.println("***************************************");
@@ -172,15 +172,15 @@ public class Homework {
 						if ( modNum == 3 ) {
 							break;
 						} else if ( modNum == 1 ) {
-							System.out.println("현재 제목은 \"" + article[num][modNum] + "\"입니다.");
+							System.out.println("현재 제목은 \"" + article[num].title + "\"입니다.");
 							System.out.print("수정할 제목을 입력 하세요 : ");
-							article[num][modNum] = scanner.nextLine();
+							article[num].title = scanner.nextLine();
 							System.out.println("수정되었습니다. ");
 							break;
 						} else if ( modNum == 2 ) {
-							System.out.println("현재 내용은 \"" + article[num][modNum+2] + "\"입니다.");
+							System.out.println("현재 내용은 \"" + article[num].content + "\"입니다.");
 							System.out.print("수정할 내용을 입력 하세요 : ");
-							article[num][modNum+2] = scanner.nextLine();
+							article[num].content = scanner.nextLine();
 							System.out.println("수정되었습니다. ");
 							break;
 						} else {
@@ -197,7 +197,7 @@ public class Homework {
 				boolean articleIs = false;
 				
 				// 목록에 글이 없으면 contentIs가 false가 되고 있으면 true가 된다.
-				for ( String[] noArticle : article ) {
+				for ( Article noArticle : article ) {
 					if ( noArticle != null ) {
 						articleIs = true;
 					}
@@ -215,9 +215,9 @@ public class Homework {
 				System.out.println("번호\t제목\t글쓴이\t조회수");
 				System.out.println("***************************************");
 				
-				for ( String[] art : article ) {
+				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art[0] + "\t" + art[1] + "\t" + art[2] + "\t   " + art[3]);
+						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hitNum);
 				}
 				
 				System.out.println("***************************************");
