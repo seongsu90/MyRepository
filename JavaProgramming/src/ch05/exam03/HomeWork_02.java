@@ -18,7 +18,7 @@ public class HomeWork_02 {
 			
 			String chose = scanner.nextLine();
 			
-			if(chose.equals(1))
+			if(chose.equals("1"))
 			{
 				boolean indexIs = false;
 				
@@ -36,12 +36,13 @@ public class HomeWork_02 {
 					continue;
 				}
 				
-				System.out.println("***************************************");				System.out.println("번호\t제목\t글쓴이\t조회수");
+				System.out.println("***************************************");				
+				System.out.println("번호\t제목\t글쓴이\t조회수");
 				System.out.println("***************************************");
 				
 				for(String[] indexS :index)
 				{
-					if(indexS!=null)
+					if(indexS != null)
 					{
 						System.out.println(indexS[0]+ "\t"+indexS[1]+"\t"+indexS[2]+"\t"+indexS[3]);
 					}
@@ -50,7 +51,7 @@ public class HomeWork_02 {
 				System.out.println();
 				
 			}
-			else if(chose.equals(2))
+			else if(chose.equals("2"))
 			{
 				System.out.println("제목: ");
 				String name = scanner.nextLine();
@@ -70,7 +71,7 @@ public class HomeWork_02 {
 				}
 				
 			}
-			else if(chose.equals(3))
+			else if(chose.equals("3"))
 			{
 				boolean indexIs = false;
 				
@@ -97,6 +98,59 @@ public class HomeWork_02 {
 					if ( indexS != null )
 						System.out.println(indexS[0] + "\t" + indexS[1] + "\t" + indexS[2] + "\t   " + indexS[3]);
 				}
+				
+				System.out.println("***************************************");
+				System.out.println();
+				
+				System.out.print("자세히 볼 글의 번호를 입력하세요 : ");
+				int num = Integer.parseInt(scanner.nextLine());
+				System.out.println();
+				
+				if(index[num]==null)
+				{
+					System.out.println("입력하신 번호에 해당하는 글이 없습니다.");
+					}else{
+							index[num][3] = String.valueOf(1+ Integer.parseInt(index[num][3]));
+							
+							System.out.println("번호 : " + index[num][0]);
+							System.out.println("제목 : " + index[num][1]);
+							System.out.println("글쓴이 : " + index[num][2]);
+							System.out.println("조회수 : " + index[num][3]);
+							System.out.println("내용 : ");
+							System.out.println(index[num][4]);
+					}	
+			}else if(chose.equals("4"))
+			{
+				boolean indexIs = false;
+				
+				for(String[] noIndex:index)
+				{
+					if(noIndex != null)
+					{
+						indexIs=true;
+					}
+				}
+				
+				if(indexIs ==false)
+				{
+					System.out.println("저장되어있는 글이 없습니다. ");
+					continue;					
+				}
+				
+				System.out.println("***************************************");
+				System.out.println("번호\t제목\t글쓴이\t조회수");
+				System.out.println("***************************************");
+				
+				for(String[] indexS : index)
+				{
+					if(indexS!=null)
+						System.out.println(indexS[0] + "\t" + indexS[1] + "\t" + indexS[2] + "\t   " + indexS[3]);	
+				}
+				System.out.println("***************************************");
+				System.out.println();
+				
+				System.out.print("수정할 글의 번호를 입력하세요 : ");
+				int num = Integer.parseInt(scanner.nextLine());
 			}
 			
 		}

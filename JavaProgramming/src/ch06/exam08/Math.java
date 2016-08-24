@@ -1,0 +1,47 @@
+package ch06.exam08;
+
+public class Math {
+	//field
+	
+	//constructor
+	
+	//Method
+	void printInfo(String info){
+		System.out.println(info);
+	}
+	
+	int max(int x,int y)
+	{
+		if(x>y)
+		{
+			return x;
+		}else{
+			return y;
+		}
+				
+	}
+	
+	double avg1(int[] values)
+	{
+		int sum=0;
+		for(int i=0;i<values.length;i++)
+		{
+			sum +=values[i];
+		}
+		double avg = (double)sum/values.length;
+		
+		return avg;
+	}
+	
+	double avg2(int ... values) // 이것도 배열이다. 배열변수다. // 매개변수의 수가 자유롭다.
+ 	{
+		int sum=0;
+		for(int i=0;i<values.length;i++)
+		{
+			sum +=values[i];
+		}
+		double avg = (double)sum/values.length;
+		
+		return avg;
+	}
+}
