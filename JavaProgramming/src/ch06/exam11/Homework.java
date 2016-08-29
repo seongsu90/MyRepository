@@ -44,7 +44,7 @@ public class Homework {
 				
 				for ( Board b1 : board ) {
 					if ( b1 != null )
-						System.out.println(b1.getBno() + "\t" + b1.getBtitle() + "\t" + b1.getBwriter() + "\t   " + b1.getBno());
+						System.out.println(b1.getBno() + "\t" + b1.getBtitle() + "\t" + b1.getBwriter() + "\t   " + b1.getbHitCount());
 				}
 				
 				System.out.println("***************************************");
