@@ -8,7 +8,7 @@ public class BoardExample {
 		Board b1 =new Board(3);
 		Board b2 = new Board(1,"제목");
 		
-		System.out.println(b1);
+		System.out.println(b1.no);
 		
 		
 		
