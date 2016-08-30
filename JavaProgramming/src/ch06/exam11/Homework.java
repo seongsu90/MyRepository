@@ -18,8 +18,8 @@ public class Homework {
 			
 			if ( choice.equals("1") ) {
 				// 1. 목록 을 선택했을 때 실행되는 부분
-				// 번호  제목  글쓴이  조회수 
-				// 를 표시하는 목록이 나타난다.
+				// 번호  제목  글쓴이  조회수를 표시하는 목록이 나타난다.
+				
 				
 				// 입력된 글이 있는지 확인. 있으면 true 없으면 false
 				boolean boardIs = false;
