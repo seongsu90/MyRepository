@@ -1,4 +1,4 @@
-package ch08.exam01;
+package ch08.exam03;
 
 public interface RemoteControl {
 	
