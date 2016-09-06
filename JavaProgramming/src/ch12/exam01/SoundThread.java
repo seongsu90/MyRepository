@@ -18,7 +18,7 @@ public class SoundThread extends Thread{ // 반드시 run()을 재정의 해야�
 		for(int i=0;i<5;i++)
 		{
 			toolkit.beep();
-			System.out.println("소리: "+Thread.currentThread().getName());
+			System.out.println("소리 : "+Thread.currentThread().getName());
 			try{Thread.sleep(500);} catch(Exception e){}
 		}
 	
