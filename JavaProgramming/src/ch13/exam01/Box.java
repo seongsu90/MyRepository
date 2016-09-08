@@ -1,0 +1,17 @@
+package ch13.exam01; //비 제네릭 실습
+
+public class Box {
+	private Object item;
+
+	public Object getItem() {
+		return item;
+	}
+
+	public void setItem(Object item) {
+		this.item = item;
+	}
+
+
+	
+	
+}
