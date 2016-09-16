@@ -5,7 +5,7 @@ public class Earth {
 	static final double EARTH_SURFACE_AREA;
 	
 	
-	static
+	static //정적블록
 	{
 		EARTH_SURFACE_AREA = 4*Math.PI*EARTH_RADIUS*EARTH_RADIUS;
 	}

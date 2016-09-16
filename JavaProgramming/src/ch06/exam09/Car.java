@@ -27,7 +27,7 @@ public class Car {
 		
 	}
 	
-	void run() 
+	void run() throws InterruptedException 
 	{
 		while(true)
 		{
@@ -35,6 +35,7 @@ public class Car {
 			{
 				System.out.println("멈춥니다.(gas 잔량: " + gas+")");
 				gas -= 1;
+				Thread.sleep(1000);
 			}
 			else
 			{

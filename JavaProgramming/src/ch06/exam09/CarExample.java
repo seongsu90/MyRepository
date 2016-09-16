@@ -2,7 +2,7 @@ package ch06.exam09;
 
 public class CarExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		Car myCar =new Car();

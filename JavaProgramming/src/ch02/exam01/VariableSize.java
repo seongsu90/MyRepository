@@ -1,5 +1,7 @@
 package ch02.exam01;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 public class VariableSize {
 
 	public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class VariableSize {
 		int var3 = 200;
 		byte var4 = (byte)  var3;
 		System.out.println(var4);
+
 		
 		int var5 = 200000;
 		char var6= (char) var5;
