@@ -14,6 +14,8 @@ public class PersonExample {
 		//p1.nation="usa";  final 필드는 값 수정 불가
 		//p1.ssn="654321-7654321";
 		p1.name="을지문덕";
+		
+		
 	}
 
 }
