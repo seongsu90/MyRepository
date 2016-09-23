@@ -1,6 +1,5 @@
 package ch18.exam04;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;

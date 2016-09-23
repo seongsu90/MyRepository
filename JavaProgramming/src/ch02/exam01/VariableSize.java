@@ -1,7 +1,5 @@
 package ch02.exam01;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 public class VariableSize {
 
 	public static void main(String[] args) {

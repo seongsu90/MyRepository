@@ -2,8 +2,6 @@ package ch11.exam03;
 
 import java.util.Calendar;
 
-import ch06.exam08.Calculator;
-
 public class Date {
 		@Override
 		public String toString() {

@@ -1,7 +1,6 @@
 package ch18.exam01;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 

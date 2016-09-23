@@ -1,7 +1,8 @@
 package ch06.exam15;
 
-import ch06.exam15.pack1.*; //*는 이 패키지않에 있는 모든 클래스파일 사용
-import ch06.exam15.pack2.*;
+//*는 이 패키지않에 있는 모든 클래스파일 사용
+import ch06.exam15.pack1.A;
+import ch06.exam15.pack2.B;
 public class Example {
 
 	public static void main(String[] args) {
