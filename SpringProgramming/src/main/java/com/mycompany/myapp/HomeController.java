@@ -14,13 +14,7 @@ public class HomeController {
 	public String home() { //변수이름은 중요하지 않다.
 		logger.info("home() 실행"); //views 의 home.jsp 와 같은거다
 
-		return "index";
-	}
-	
-	@RequestMapping("/news")
-	public String news(){
-		logger.info("news() 실행");
-		return "news";
+		return "home";
 	}
 	
 }
