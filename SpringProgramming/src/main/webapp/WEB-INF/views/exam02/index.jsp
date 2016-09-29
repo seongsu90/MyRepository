@@ -7,7 +7,7 @@
 	</head>
 	<body> <!-- 브라우저에 나오는 부분 -->
 	<p align="left"><a href="/myapp/"><IMAGE SRC="/myapp/resources/spring.jpg"></IMAGE></a>
-		<font size="6"><b>Exam01</b></font>
+		<font size="6"><b>Exam02</b></font>
 		<hr/>
 		<a href="/myapp/exam02/join?mid=user1&mname=홍길동&mage=30">가입</a><br/>
 		<a href="/myapp/exam02/order?pid=5&pname=마우스&pprice=5000&pcompany=삼성">주문</a><br/>
