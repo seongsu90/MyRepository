@@ -11,7 +11,7 @@
 		&nbsp; <font size="6"><b>exam03 </b></font></p>
 		<hr/> <!-- 시작과 동시에 끝이다라는 의미<br/>// 태그의 의미는 수평선그리기 -->
 		[회원 가입 폼] <br/>
-		<form action="/myapp/exam03/join">
+		<form action="/myapp22/exam03/join">
 			아이디: <input type="text" name="mid" value="fall"/> <br/> <%-- name은 파라미터 이름 지정 --%>
 			이름: <input type="text" name="mname" value="한가을"/> <br/>
 			비밀번호: <input type="password" name="mpassword" value="12345"/> <br/>
@@ -51,7 +51,7 @@
 			 <input type="submit"value="가입"/>		submit과 button,image 의 기능이 같다.서버로 전송
 			<button>가입</button> 	 
 			--%>
-			<input type="image" src="/myapp/resources/image/join.png" width="150"/>
+			<input type="image" src="/myapp22/resources/image/join.png" width="150"/>
 				
 		</form>
 	</body>
