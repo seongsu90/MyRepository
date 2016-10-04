@@ -16,7 +16,7 @@
 		4. <a href="/myapp2/exam04/index">Exam04</a> : 요청 방식별 처리 <br/>
 		5. <a href="/myapp2/exam05/index">Exam05</a> : 요청 처리 메소드의 리턴 타입  <br/>
 		6. <a href="/myapp2/exam06/index">Exam06</a> : 요청 처리 메소드의 매개 변수 타입   <br/>
-		*. <a href="/myapp2/practice/index">Practice</a> : 게시판 양식 폼 <br/>
+		
 		
 	</body>
 </html>
