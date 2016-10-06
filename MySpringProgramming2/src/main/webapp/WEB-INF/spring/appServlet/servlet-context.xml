@@ -23,6 +23,27 @@
 	
 	<context:component-scan base-package="com.mycompany.myapp2" />
 	
+	<!-- A를 관리 객체로 생성 -->
+	<beans:bean name="a_Obj" class="com.mycompany.myapp2.exam09.A"/>
+	<!-- B를 관리 객체로 생성 -->
+	<beans:bean name="b_Obj" class="com.mycompany.myapp2.exam09.B"/>
+	<!--ServiceA를 관리 객체로 생성-->
+	<beans:bean name="ServiceAObj" class="com.mycompany.myapp2.exam09.ServiceA"/>
+	<!--ServiceB를 관리 객체로 생성-->
+	<beans:bean name="ServiceBObj" class="com.mycompany.myapp2.exam09.ServiceB"/>
+	<!--ServiceCImpl1를 관리 객체로 생성-->
+	<beans:bean name="ServiceCImpl1" class="com.mycompany.myapp2.exam09.ServiceCImpl1"/>
+	<!--ServiceCImpl2를 관리 객체로 생성-->
+	<beans:bean name="ServiceCImpl2" class="com.mycompany.myapp2.exam09.ServiceCImpl2"/>
+		
+	<beans:bean name="exam09Controller" class="com.mycompany.myapp2.exam09.Exam09Controller">
+	<beans:property name="a" ref="a_Obj"/>
+	<beans:property name="b" ref="b_Obj"/> <!-- setter 주입을하라는 의미 property , setter 메소드의 이름을 쓰는데 set을 빼고 첫자로 소문자로한 이름이 name에 들어온다.-->
+	<beans:property name="serviceA" ref="ServiceAObj"/>
+	<beans:property name="serviceB" ref="ServiceBObj"/>
+	<beans:property name="serviceC" ref="ServiceCImpl1"/>
+	<beans:property name="serviceD" ref="ServiceCImpl2"/>
 	
+	</beans:bean>
 	
 </beans:beans>
