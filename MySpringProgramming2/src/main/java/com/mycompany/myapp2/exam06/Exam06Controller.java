@@ -11,6 +11,7 @@ import java.net.URLEncoder;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -183,5 +184,30 @@ public class Exam06Controller {
 		return "exam06/index";
 	}
 	
+	@RequestMapping("/method5SetObject")
+	public String method5SetObject(HttpSession session)
+	{
+		Member m = new Member("fall","한가을");
+		session.setAttribute("member",m);
+		return "exam06/index";
+	}
+	
+	@RequestMapping("/method5GetObject")
+	public String method5GetObject(HttpSession session)
+	{
+		Member member = (Member) session.getAttribute("member");
+		if(member!=null){
+		logger.info("mid: "+member.getMid());
+		logger.info("mname: "+ member.getMname());
+		}
+		return "exam06/index";
+	}
+	
+	@RequestMapping("/method5RemoveObject")
+	public String method5RemoveObject(HttpSession session)
+	{
+		session.removeAttribute("member");
+		return "exam06/index";
+	}
 	
 }
