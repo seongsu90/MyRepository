@@ -27,6 +27,24 @@
 	<beans:bean name="aObj" class="com.mycompany.myapp.exam09.A"/>
 	<!--B를 관리 객체로 생성-->
 	<beans:bean name="bObj" class="com.mycompany.myapp.exam09.B"/>
+	<!--C를 관리 객체로 생성-->
+	<beans:bean name="c" class="com.mycompany.myapp.exam09.C">
+		<beans:constructor-arg ref="d"/>
+	</beans:bean>
+	<!--D를 관리 객체로 생성-->
+	<beans:bean name="d" class="com.mycompany.myapp.exam09.D"/>
+	<!--E를 관리 객체로 생성--> <!--기본생성자가 없기때문에 contructor을 쓰지 않으면 안된다.  -->
+	<beans:bean name="e" class="com.mycompany.myapp.exam09.E">
+		<beans:constructor-arg ref="d" />
+		<beans:constructor-arg ref="bObj" />
+	</beans:bean>
+	
+	<beans:bean name="f" class="com.mycompany.myapp.exam09.F">
+		<beans:constructor-arg ref="ServiceAObj" />
+		<beans:constructor-arg ref="ServiceBObj" />
+		<beans:constructor-arg ref="ServiceCImpl1" />
+	</beans:bean>
+	
 	<!--ServiceA를 관리 객체로 생성-->
 	<beans:bean name="ServiceAObj" class="com.mycompany.myapp.exam09.ServiceA"/>
 	<!--ServiceB를 관리 객체로 생성-->
@@ -47,6 +65,9 @@
 		<beans:property name="serviceB" ref="ServiceBObj"/>
 		<beans:property name="serviceC" ref="ServiceCImpl1"/>
 		<beans:property name="serviceD" ref="ServiceCImpl2"/>
+		<beans:property name="c" ref="c"/>
+		<beans:property name="e" ref="e"/>
+		<beans:property name="f" ref="f"/>
 		
 		
 	</beans:bean>
