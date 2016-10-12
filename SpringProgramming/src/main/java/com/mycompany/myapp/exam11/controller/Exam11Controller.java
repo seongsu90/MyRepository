@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mycompany.myapp.exam11.dto.Board;
 import com.mycompany.myapp.exam11.dto.Member;
+import com.mycompany.myapp.exam11.service.Exam11BoardService;
 import com.mycompany.myapp.exam11.service.Exam11MemberService;
 
 
@@ -105,7 +106,7 @@ public class Exam11Controller {
 	@RequestMapping(value="/boardWrite",method=RequestMethod.POST)
 	public String boardWrite(Board board){
 		logger.info("boardWrite 처리");
-		boardService.insert(board);
+		boardService.write(board);
 		return "redirect:/exam11/index";
 	}
 }
