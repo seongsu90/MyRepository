@@ -8,7 +8,7 @@
 	<body> <!-- 브라우저에 나오는 부분 -->
 		
 		<p align="left"><a href="/myapp/"><IMAGE SRC="/myapp/resources/spring.jpg"></IMAGE></a>
-		&nbsp; <font size="6"><b>Exam11</b></font></p>
+		&nbsp; <font size="6"><b>Exam11_게시물 쓰기폼</b></font></p>
 		<hr/> <!-- 시작과 동시에 끝이다라는 의미<br/>// 태그의 의미는 수평선그리기 -->
 		
 		<form method="post" action="/myapp/exam11/boardWrite">

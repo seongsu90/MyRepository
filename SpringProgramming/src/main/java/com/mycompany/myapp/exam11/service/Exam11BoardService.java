@@ -1,5 +1,7 @@
 package com.mycompany.myapp.exam11.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,14 @@ public class Exam11BoardService {
 	
 	public void write(Board board)
 	{
-		logger.info("insert 처리");
+		logger.info("write 처리");
 		boardDao.insert(board);
+	}
+	
+	public List<Board> getList()
+	{
+		logger.info("getList 처리");
+		List<Board> list = boardDao.selectList();
+		return list;
 	}
 }

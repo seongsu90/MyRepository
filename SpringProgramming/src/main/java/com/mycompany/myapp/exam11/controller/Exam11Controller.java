@@ -2,11 +2,13 @@ package com.mycompany.myapp.exam11.controller;
 
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -108,5 +110,13 @@ public class Exam11Controller {
 		logger.info("boardWrite 처리");
 		boardService.write(board);
 		return "redirect:/exam11/index";
+	}
+	
+	@RequestMapping("/boardList")
+	public String boardList(Model model){
+		logger.info("boardList 처리");
+		List<Board> list = boardService.getList();
+		model.addAttribute("boardlist",list);
+		return "exam11/boardList";
 	}
 }

@@ -1,4 +1,4 @@
-package com.mycompany.myapp.exam10;
+package com.mycompany.myapp2.exam10;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,12 +11,11 @@ public class J {
 	
 	private H h;
 	private G g;
-
 	
 	@Autowired
-	public J(H h, G g) //생성자 주입
+	public J(H h,G g)
 	{
-		logger.info("J 객체 생성");
+		logger.info("exam10 J 객체 생성");
 		this.h=h;
 		this.g=g;
 	}

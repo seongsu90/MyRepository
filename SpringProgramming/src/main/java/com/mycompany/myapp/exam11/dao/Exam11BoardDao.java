@@ -1,5 +1,8 @@
 package com.mycompany.myapp.exam11.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -18,5 +21,20 @@ public class Exam11BoardDao {
 		logger.info("btitle: "+board.getBtitle());
 		logger.info("bcontent: "+ board.getBcontent());
 		
+	}
+	
+	public List<Board> selectList()
+	{
+		logger.info("selectList 처리");
+		List<Board> list = new ArrayList<>();
+		for(int i=0;i<10;i++)
+		{
+			Board board = new Board();
+			board.setBtitle("제목: "+i);
+			board.setBcontent("내용: "+i);
+			board.setBwriter("글쓴이: "+i);
+			list.add(board);
+		}
+		return list;
 	}
 }
