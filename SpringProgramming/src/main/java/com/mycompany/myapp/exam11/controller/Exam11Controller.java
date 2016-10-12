@@ -22,15 +22,15 @@ import com.mycompany.myapp.exam11.service.Exam11MemberService;
 @Controller("MemberController") // 이렇게하면 등록이름을 지정해줄수 있다.
 @RequestMapping("/exam11")
 public class Exam11Controller {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(Exam11Controller.class);
-	
+
 	@Autowired
 	private Exam11MemberService memberService;
-	
+
 	@Autowired
 	private Exam11BoardService boardService;
-	
+
 
 	@RequestMapping("/index")
 	public String index()
@@ -38,14 +38,14 @@ public class Exam11Controller {
 		logger.info("index 처리");
 		return "exam11/index";
 	}
-	
+
 	@RequestMapping(value="/memberJoin",method=RequestMethod.GET)
 	public String memberJoinForm()
 	{
 		logger.info("memberJoin(GET) 처리");
 		return "exam11/memberJoinForm";
 	}
-	
+
 	@RequestMapping(value="/memberJoin",method=RequestMethod.POST)
 	public String memberJoin(Member member)
 	{
@@ -60,28 +60,28 @@ public class Exam11Controller {
 		logger.info("maddress1: "+member.getMaddress1());
 		logger.info("maddress2: "+member.getMaddress2());
 		logger.info("mbirth: "+member.getMbirth());
-		
+
 		memberService.join(member);
 		return "redirect:/exam11/memberLogin";
 	}
-	
+
 	@RequestMapping(value="/memberLogin",method=RequestMethod.GET)
 	public String memberLoginForm()
 	{
 		logger.info("memberLogin(GET) 처리");
 		return "exam11/memberLoginForm";
 	}
-	
+
 	@RequestMapping(value="/memberLogin",method=RequestMethod.POST)
 	public String memberLogin(String mid,String mpassword)
 	{
 		logger.info("memberLogin(POST) 처리");
 		logger.info("mid: "+mid);
 		logger.info("mpassword: "+mpassword);
-		
-		
+
+
 		int result=memberService.login(mid,mpassword);
-		
+
 		if(result==Exam11MemberService.LOGIN_SUCCESS){
 			return "redirect:/exam11/index";
 		}else if(result==Exam11MemberService.LOGIN_FAIL_MID){
@@ -89,29 +89,29 @@ public class Exam11Controller {
 		}else {
 			return "redirect:/exam11/memberLogin";
 		}
-		
+
 	}
-	
-	@RequestMapping("/memberLohout")
+
+	@RequestMapping("/memberLogout")
 	public String memberLogout()
 	{
 		logger.info("memberLogout 처리");
 		return "redirect:/exam11/index";
 	}
-	
+
 	@RequestMapping(value="/boardWrite",method=RequestMethod.GET)
 	public String boardWriteForm(){
 		logger.info("boardWriteForm 처리");
 		return "exam11/boardWriteForm";
 	}
-	
+
 	@RequestMapping(value="/boardWrite",method=RequestMethod.POST)
 	public String boardWrite(Board board){
 		logger.info("boardWrite 처리");
 		boardService.write(board);
 		return "redirect:/exam11/index";
 	}
-	
+
 	@RequestMapping("/boardList")
 	public String boardList(Model model){
 		logger.info("boardList 처리");
