@@ -1,6 +1,6 @@
 package com.mycompany.myapp.exam04;
 
-import java.io.UnsupportedEncodingException;
+
 import java.util.Arrays;
 
 import org.slf4j.Logger;
