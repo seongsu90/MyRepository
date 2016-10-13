@@ -142,7 +142,7 @@ public class Exam11Controller {
 	@RequestMapping(value="/boardUpdate",method=RequestMethod.POST)
 	public String boardUpdate(Board board)
 	{
-		logger.info("boardUpdateForm 처리");
+		logger.info("boardUpdate 처리");
 		boardService.updateBoard(board);
 		return "redirect:/exam11/boardList";
 	}
