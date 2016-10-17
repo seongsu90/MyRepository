@@ -9,7 +9,8 @@ import java.sql.SQLException;
 public class Exam04 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		Class.forName("oracle.jdbc.OracleDriver"); //메모리에 클래스 등록? // OracleDriver 객체를 DriverManager에 등록하는 코드가 OracleDriver에 존재한다.
+		Class.forName("oracle.jdbc.OracleDriver"); 
+		//메모리에 클래스 등록? // OracleDriver 객체를 DriverManager에 등록하는 코드가 OracleDriver에 존재한다.
 		Connection conn =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","tester1","kosa12345");
 		
 		//부서명을 조건으로 해서 부서명 일부분을 입력했을때 
