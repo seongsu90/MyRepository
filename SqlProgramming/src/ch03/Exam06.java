@@ -10,17 +10,34 @@ import java.util.List;
 
 public class Exam06 {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	public static void main(String[] args) {
 		
 		//과제
-		Employee emp = getEmployee(1001);
-		System.out.println(emp.getEmpno()+":"+emp.getEname()+":"+emp.getSal());
-		List<Department> result = getDepartment("개발");
-		
-		for(Department dept : result){
-			System.out.println(dept.getDeptno()+":"+dept.getDname()+":"+dept.getLoc());
+		Employee emp;
+		try {
+			emp = getEmployee(1001);
+			System.out.println(emp.getEmpno()+":"+emp.getEname()+":"+emp.getSal());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
+		try {
+			List<Department> result;
+			result = getDepartment("개발");
+			for(Department dept : result){
+				System.out.println(dept.getDeptno()+":"+dept.getDname()+":"+dept.getLoc());
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	
