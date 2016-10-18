@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Exam52 {
+public class Exam05_2 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
 		while(true)

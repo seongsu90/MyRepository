@@ -13,10 +13,10 @@ public class Exam06 {
 	public static void main(String[] args) {
 		
 		//과제
-		Employee emp;
+		Employee emp=null;
 		try {
 			emp = getEmployee(1001);
-			System.out.println(emp.getEmpno()+":"+emp.getEname()+":"+emp.getSal());
+			System.out.println(emp.getEmpno()+" : "+emp.getEname()+" : "+emp.getSal());
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +29,7 @@ public class Exam06 {
 			List<Department> result;
 			result = getDepartment("개발");
 			for(Department dept : result){
-				System.out.println(dept.getDeptno()+":"+dept.getDname()+":"+dept.getLoc());
+				System.out.println(dept.getDeptno()+" : "+dept.getDname()+" : "+dept.getLoc());
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -54,7 +54,7 @@ public class Exam06 {
 		pstmt.setString(1, number);
 		ResultSet rs = pstmt.executeQuery();
 		
-		while(rs.next()){
+		if(rs.next()){
 		
 		emp.setEmpno(rs.getInt("empno"));
 		emp.setEname(rs.getString("ename"));
@@ -67,8 +67,9 @@ public class Exam06 {
 		
 		}
 		rs.close();
-		conn.close();
 		pstmt.close();
+		conn.close();
+		
 		return emp;
 		
 	}
@@ -93,8 +94,8 @@ public class Exam06 {
 			dp.add(dep);
 		}
 		rs.close();
-		conn.close();
 		pstmt.close();
+		conn.close();
 
 		return dp;
 	}
