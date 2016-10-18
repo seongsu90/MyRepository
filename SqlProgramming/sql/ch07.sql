@@ -21,7 +21,7 @@ alter table member add email varchar(100) null;
 alter table member modify email varchar(50);
 alter table member drop column email;
 
-alter table board modify btitle varchar(100);
+
 
 --Section03 테이블명 변경하는 RENAME문
 alter table member2 rename to member;
