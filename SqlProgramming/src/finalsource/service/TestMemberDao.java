@@ -16,8 +16,8 @@ public class TestMemberDao {
 			//testInsert();
 			//testSelectByMid();
 			//testSelectByMname();
-			//testupdate();
-			testDeleteByMid();
+			testupdate();
+			//testDeleteByMid();
 	}
 
 	public static void testInsert(){
@@ -30,6 +30,7 @@ public class TestMemberDao {
 			Member member = new Member();
 			member.setMid("user10");
 			member.setMname("사용자10");
+			member.setMpassword("kosa12345");
 			member.setMage(26);
 			member.setMbirth(new Date());
 			
@@ -55,6 +56,7 @@ public class TestMemberDao {
 			{
 				System.out.print(member.getMid() +": ");
 				System.out.print(member.getMname() +": ");
+				System.out.println(member.getMpassword());
 				System.out.print(member.getMage() +": ");
 				System.out.print(member.getMbirth() +":");
 				System.out.println();
@@ -80,6 +82,7 @@ public class TestMemberDao {
 			{
 				System.out.print(member.getMid() +": ");
 				System.out.print(member.getMname() +": ");
+				System.out.println(member.getMpassword());
 				System.out.print(member.getMage() +": ");
 				System.out.print(member.getMbirth());
 				System.out.println();
@@ -103,6 +106,7 @@ public class TestMemberDao {
 			Member member = new Member();
 			member.setMid("user10");
 			member.setMname("홍길동");
+			member.setMpassword("12345");
 			member.setMage(32);
 			member.setMbirth(new Date());
 			

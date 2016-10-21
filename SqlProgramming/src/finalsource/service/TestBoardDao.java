@@ -14,11 +14,11 @@ import finalsource.dto.Board;
 public class TestBoardDao {
 
 	public static void main(String[] args) {
-		//testInsert();
+		testInsert();
 		//testselectByBno();
 		//testselectByBtitle();
 		//testupdate();
-		testdeleteByBno();
+		//testdeleteByBno();
 	}
 
 	private static void testdeleteByBno() {
@@ -52,8 +52,8 @@ public class TestBoardDao {
 			board.setBno(10);
 			board.setBtitle("제목10_2");
 			board.setBcontent("내용10_2");
-			board.setBwriter("홍길도");
-			board.setBhitcount(20);
+			board.setBwriter("user10");
+			board.setBhitcount(5);
 			board.setBdate(new Date());
 			
 			int rowNo = dao.update(board);
@@ -132,13 +132,9 @@ public class TestBoardDao {
 			dao.setConn(conn);
 			
 			Board board = new Board();
-			
-			board.setBno(10);
 			board.setBtitle("제목10");
 			board.setBcontent("내용10");
 			board.setBwriter("user10");
-			board.setBhitcount(0);
-			board.setBdate(new Date());
 			int rowNo=dao.insert(board);
 			
 			System.out.println(rowNo+"행이 삽입됨");
