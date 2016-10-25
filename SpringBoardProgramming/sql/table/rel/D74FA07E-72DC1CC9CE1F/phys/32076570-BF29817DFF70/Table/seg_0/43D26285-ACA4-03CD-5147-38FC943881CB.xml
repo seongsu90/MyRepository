@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="freeboard" directorySegmentName="seg_0" id="43D26285-ACA4-03CD-5147-38FC943881CB">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:37 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="bwriter" id="270B7F44-DC96-D315-9B14-958434D16352">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:51:32 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="btitle" id="6ABFFFD5-6559-A4D3-4D01-8090C4E31347">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:46:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="bdate" id="7D71617F-76F7-7F6F-0E31-95140CBF3A71">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:46:37 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="bcontent" id="96F3B9F2-ED91-C927-AC19-CA27CE775A99">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:46:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="bhitcount" id="AAC65076-0781-A3FB-20E5-4C3EE8EA88FE">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:46:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="bno" id="BB9B1054-F9F8-5BA3-43B0-4A509455CBB8">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:46:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="freeboard_MEMBER_FK" id="6D8D4397-96CA-FE80-4DBA-AEB9CB2160A2">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:51:49 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="freeboard_PK" id="271CFCBC-436A-3C60-A713-29D078F20B6A">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:48:31 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MEMBER" directorySegmentName="seg_0" id="208EF7A4-6EB0-0B1B-C7FF-7A6D48FFFE54">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<schemaObject>F8BE9609-E797-BC42-D5FC-E5AE19BBDC57</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>40252253-5F27-0658-329A-AE9CC8F0DC6A</segment>
+<tableSpace>9DE4FE26-1B76-9C7D-9885-F811D5CCCF3D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MPASSWORD" id="0A74BD47-84DB-C6FE-B22E-EF88DCD6D5F1">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MAGE" id="166CAD63-63A3-D4D1-B0C0-2F16CF00E7C0">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MNAME" id="21561A11-6050-A4C3-2847-78696999FE32">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MID" id="5F06C87D-CECD-A310-08AC-8D327FA2078B">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MBIRTH" id="C3B3C4AD-1CA6-1A48-2646-5BBF64B79E1E">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_MEMBER_MID" id="F4B24075-1818-7A3D-5BFD-69784147ACD1">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:18 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<schemaObject>F8BE9609-E797-BC42-D5FC-E5AE19BBDC57</schemaObject>
+<segment>0F593C4E-CFFA-DFA2-0360-D513F1971A80</segment>
+<tableSpace>9DE4FE26-1B76-9C7D-9885-F811D5CCCF3D</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_MEMBER_MID" id="ACBA4664-B71F-4ED1-DC6D-D70A8229E57A">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:19 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<segment>0F593C4E-CFFA-DFA2-0360-D513F1971A80</segment>
+<tableSpace>9DE4FE26-1B76-9C7D-9885-F811D5CCCF3D</tableSpace>
+<existingIndex>F4B24075-1818-7A3D-5BFD-69784147ACD1</existingIndex>
+<indexSegment>0F593C4E-CFFA-DFA2-0360-D513F1971A80</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
