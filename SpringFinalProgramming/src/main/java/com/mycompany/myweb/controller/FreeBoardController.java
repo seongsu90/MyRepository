@@ -21,7 +21,21 @@ public class FreeBoardController {
 	private FreeBoardService freeBoardService;
 	
 	@RequestMapping("/list")
-	public String list(@RequestParam(defaultValue="1")int pageNo,Model model){
+	public String list(String pageNo,Model model,HttpSession session){
+		int intPageNo =1;
+		if(pageNo==null)
+		{
+			pageNo = (String) session.getAttribute("pageNo");
+			if(pageNo != null) //넘어오지도 않고 세션에 존재하지도 않을 때는 1페이를 넘겨주게끔 셋팅
+				{
+					intPageNo =Integer.parseInt(pageNo)	;
+				}
+		}else
+		{
+			intPageNo = Integer.parseInt(pageNo);
+		}
+		session.setAttribute("pageNo", String.valueOf(intPageNo));
+		
 		int rowsPerPage = 10;
 		int pagesPerGroup =5;
 		
@@ -30,14 +44,14 @@ public class FreeBoardController {
 		int totalPageNo = totalBoardNo/rowsPerPage + ((totalBoardNo%rowsPerPage!=0)?1:0); //나머지가 있다면 1을 더하고 없으면 0을 더한다.
 		int totalGroupNo = (totalPageNo/pagesPerGroup)+((totalPageNo%pagesPerGroup!=0)?1:0);
 		
-		int groupNo = (pageNo-1)/ pagesPerGroup +1;
+		int groupNo = (intPageNo-1)/ pagesPerGroup +1;
 		int startPageNo = (groupNo-1)*pagesPerGroup +1;
 		int endPageNo = startPageNo + pagesPerGroup -1;
 		
 		if(groupNo==totalGroupNo){endPageNo= totalPageNo;}
 		
-		List<FreeBoard> list = freeBoardService.list(pageNo, rowsPerPage);
-		model.addAttribute("pageNo",pageNo);
+		List<FreeBoard> list = freeBoardService.list(intPageNo, rowsPerPage);
+		model.addAttribute("pageNo",intPageNo);
 		model.addAttribute("rowsPerPage",rowsPerPage);
 		model.addAttribute("pagesPerGroup",pagesPerGroup);
 		model.addAttribute("totalPageNo",totalPageNo);
