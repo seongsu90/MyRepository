@@ -78,5 +78,11 @@ public class PhotoBoard {
 	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
 	}
+	@Override
+	public String toString() {
+		return "PhotoBoard [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bwriter=" + bwriter
+				+ ", bhitcount=" + bhitcount + ", bdate=" + bdate + ", photo=" + photo + ", originalfile="
+				+ originalfile + ", savedfile=" + savedfile + ", mimetype=" + mimetype + "]";
+	}
 	
 }

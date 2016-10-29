@@ -33,11 +33,12 @@ public class PhotoBoardDao {
 	}
 	
 	public int update(PhotoBoard photoBoard) {
-		String sql = "update photoboard set btitle=?, bcontent=?, bhitcount=?, originalfile=?, savedfile=?, mimetype=? where bno=?";
+		String sql = "update photoboard set btitle=?, bcontent=?, bwriter=?,bhitcount=?, originalfile=?, savedfile=?, mimetype=? where bno=?";
 		int row = jdbcTemplate.update(
 				sql,
 				photoBoard.getBtitle(),
 				photoBoard.getBcontent(),
+				photoBoard.getBwriter(),
 				photoBoard.getBhitcount(),
 				photoBoard.getOriginalfile(),
 				photoBoard.getSavedfile(),

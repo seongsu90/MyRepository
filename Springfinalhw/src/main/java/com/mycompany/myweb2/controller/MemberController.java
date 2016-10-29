@@ -94,4 +94,6 @@ public class MemberController {
 		model.addAttribute("member",member);
 		return "member/info";
 	}
+	
+	
 }

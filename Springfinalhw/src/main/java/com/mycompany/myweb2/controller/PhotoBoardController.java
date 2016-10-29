@@ -2,6 +2,7 @@ package com.mycompany.myweb2.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Date;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,8 @@ import com.mycompany.myweb2.service.PhotoBoardService;
 @Controller
 @RequestMapping("/photoboard")
 public class PhotoBoardController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(PhotoBoardController.class);
 	@Autowired
 	private PhotoBoardService photoBoardService;
 	
@@ -143,5 +148,42 @@ public class PhotoBoardController {
 		photoBoardService.modify(photoBoard);
 		model.addAttribute("photoBoard",photoBoard);
 		return "photoboard/info";
+	}
+	
+	@RequestMapping(value="/modify", method= RequestMethod.GET)
+	public String modifyform(int bno,Model model)
+	{
+		PhotoBoard photoBoard = photoBoardService.info(bno);
+		model.addAttribute("photoBoard",photoBoard);
+		logger.info("수정폼 가기");
+		return "photoboard/modify";
+	}
+	
+	@RequestMapping(value="/modify", method= RequestMethod.POST)
+	public String modify(PhotoBoard photoBoard, HttpSession session) throws Exception
+	{
+		logger.info("수정처리");
+		String mid = (String) session.getAttribute("login");
+		photoBoard.setBwriter(mid);
+		
+		PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
+		photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
+		
+		photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
+		String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); // 저장하는 파일이 유일해야하기 때문에 날짜를 붙인다.
+		String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
+		photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
+		photoBoard.setSavedfile(savedfile);
+		
+		photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+		photoBoardService.modify(photoBoard);
+		return "redirect:/photoboard/list";
+	}
+	
+	@RequestMapping("/delete")
+	public String delete(int bno)
+	{
+		photoBoardService.remove(bno);
+		return "redirect:/photoboard/list";
 	}
 }
