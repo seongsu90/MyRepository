@@ -89,11 +89,22 @@ public class PhotoBoardController {
 			
 			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
 			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); // 저장하는 파일이 유일해야하기 때문에 날짜를 붙인다.
-			String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
-			photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
-			photoBoard.setSavedfile(savedfile);
+			if(savedfile !=null)
+			{
+				String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
+				photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
+				photoBoard.setSavedfile(savedfile);
+				
+				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+			}
+				String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/default.jpg");
+				photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
+				photoBoard.setSavedfile(savedfile);
+				
+				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
 			
-			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+			
+			
 			
 			int result =photoBoardService.write(photoBoard);
 			return "redirect:/photoboard/list";
