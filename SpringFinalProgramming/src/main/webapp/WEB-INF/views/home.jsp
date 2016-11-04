@@ -5,6 +5,10 @@
 <html> <!-- root 태크, 엘리먼트라고 하기도 한다. -->
 	<head> <!-- 헤드엘리먼트 -->
 		<meta charset="UTF-8">
+		<link href="${pageContext.servletContext.contextPath}/resources/bootstrap-3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/justified-nav.css" rel="stylesheet">
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascrpt" src="${pageContext.servletContext.contextPath}/resources/bootstrap-3.3/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 
 (function ()
@@ -173,8 +177,14 @@
  </head>
 	
 	<body bgcolor="black"> <!-- 브라우저에 나오는 부분 -->
+	
+	<div class="jumbotron">
+        <h1>Spring Final Programming</h1>
+        <p class="lead">Java, SQL, JDBC, HTML5, CSS3, JavaScript, jQuery, AJAX, JSP, Spring</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">많이 배웠네</a></p>
+      </div>
 		
-		<p align="left"><a href="/myweb/"><IMAGE SRC="/myweb/resources/spring.jpg"></IMAGE></a>
+		<%-- <p align="left"><a href="/myweb/"><IMAGE SRC="/myweb/resources/spring.jpg"></IMAGE></a>
 		<embed src="http://www.clocklink.com/clocks/5012-pink.swf?TimeZone=KoreaRepublicof_Seoul" width="227" height="75" wmode="transparent" type="application/x-shockwave-flash">
 		&nbsp; <font size="6" color=#FFFFFF><b><marquee behavior=alternate>■■ SpringFinalProgramming ■■</marquee></b></font></p>
 		<hr/> <!-- 시작과 동시에 끝이다라는 의미<br/>// 태그의 의미는 수평선그리기 -->
@@ -186,6 +196,6 @@
 					<a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout"><font color=#FFFFFF>로그아웃</font></a><br/> <!-- 표현식 -->
 				  </c:if>
 				2. <a href="${pageContext.servletContext.contextPath}/freeboard/list"><font color=#FFFFFF>자유 게시판</font></a><br/> <!-- 표현 언어라고 한다. -->
-				3. <a href="${pageContext.servletContext.contextPath}/photoboard/list"><font color=#FFFFFF>포토 게시판</font></a><br/>
+				3. <a href="${pageContext.servletContext.contextPath}/photoboard/list"><font color=#FFFFFF>포토 게시판</font></a><br/> --%>
 	</body>
 </html>
