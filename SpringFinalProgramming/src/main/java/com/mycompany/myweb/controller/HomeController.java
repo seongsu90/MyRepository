@@ -13,6 +13,12 @@ public class HomeController {
 	@RequestMapping("/")
 	public String index() { 
 		logger.info("home() 실행"); 
+		return "index";
+	}
+	
+	@RequestMapping("/home")
+	public String home() { 
+		logger.info("home() 실행"); 
 		return "home";
 	}
 	
