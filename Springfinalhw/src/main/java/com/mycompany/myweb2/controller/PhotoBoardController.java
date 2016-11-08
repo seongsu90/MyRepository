@@ -38,7 +38,7 @@ public class PhotoBoardController {
 		if(pageNo==null)
 		{
 			pageNo = (String) session.getAttribute("pageNo");
-			if(pageNo != null) //넘어오지도 않고 세션에 존재하지도 않을 때는 1페이를 넘겨주게끔 셋팅
+			if(pageNo != null)
 				{
 					intPageNo =Integer.parseInt(pageNo)	;
 				}
@@ -48,12 +48,12 @@ public class PhotoBoardController {
 		}
 		session.setAttribute("pageNo", String.valueOf(intPageNo));
 		
-		int rowsPerPage = 8;
+		int rowsPerPage = 12;
 		int pagesPerGroup =5;
 		
 		int totalBoardNo = photoBoardService.getCount();
 		
-		int totalPageNo = totalBoardNo/rowsPerPage + ((totalBoardNo%rowsPerPage!=0)?1:0); //나머지가 있다면 1을 더하고 없으면 0을 더한다.
+		int totalPageNo = totalBoardNo/rowsPerPage + ((totalBoardNo%rowsPerPage!=0)?1:0); 
 		int totalGroupNo = (totalPageNo/pagesPerGroup)+((totalPageNo%pagesPerGroup!=0)?1:0);
 		
 		int groupNo = (intPageNo-1)/ pagesPerGroup +1;
@@ -88,24 +88,21 @@ public class PhotoBoardController {
 			photoBoard.setBwriter(mid);
 			
 			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
-			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); // 저장하는 파일이 유일해야하기 때문에 날짜를 붙인다.
-			if(savedfile !=null)
+			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); 
+		/*	if(savedfile !=null)
 			{
-				String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
-				photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
-				photoBoard.setSavedfile(savedfile);
-				
-				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
-			}
 				String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/default.jpg");
-				photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
+				photoBoard.getPhoto().transferTo(new File(realPath));
 				photoBoard.setSavedfile(savedfile);
 				
 				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
-			
-			
-			
-			
+			}*/
+				String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
+				photoBoard.getPhoto().transferTo(new File(realPath));
+				photoBoard.setSavedfile(savedfile);
+				
+				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+
 			int result =photoBoardService.write(photoBoard);
 			return "redirect:/photoboard/list";
 			}
@@ -121,12 +118,6 @@ public class PhotoBoardController {
 		try{
 		String fileName = savedfile;	
 		
-		/*
-		브라우저에서 보여주지 않고 강제로 다운로드 할 경우
-		fileName = URLEncoder.encode(fileName,"UTF-8"); // 파일이름을 한글로 다운받을때 인코딩을 해야된다.
-		response.setHeader("Content-Disposition", "attachment; filename=\"사진1.jpg\""); //다운로드 설정\"222\" 로하면 이름 사이에 공백이있어도 인식한다.
-		rs.setHeader("Content-Disposition", "attachment; filename=\""+fileName+"\"");
-		*/
 		String mimeType = req.getServletContext().getMimeType(fileName);
 		
 		rs.setContentType(mimeType);
@@ -181,9 +172,9 @@ public class PhotoBoardController {
 		photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
 		
 		photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
-		String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); // 저장하는 파일이 유일해야하기 때문에 날짜를 붙인다.
+		String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); 
 		String realPath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
-		photoBoard.getPhoto().transferTo(new File(realPath)); // 지정된 경로로 파일을 저장한다는것? 83,84,실제 파일시스템을 저장
+		photoBoard.getPhoto().transferTo(new File(realPath));
 		photoBoard.setSavedfile(savedfile);
 		
 		photoBoard.setMimetype(photoBoard.getPhoto().getContentType());

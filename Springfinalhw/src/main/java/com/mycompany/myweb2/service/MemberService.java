@@ -58,13 +58,17 @@ public class MemberService {
 	
 	public Member info(String mid,String mpassword) {
 		Member member = memberDao.selectByMid(mid);
-		if ( member.getMpassword().equals(mpassword) == false ) return null;
+		if ( member.getMpassword().equals(mpassword) == false ) 
+			{
+				return null;
+			}
 		return member;
 	}
 	
 	public int modify(Member member) {
 		Member dbMember = memberDao.selectByMid(member.getMid());
-		if(dbMember.getMpassword().equals(member.getMpassword())==false){
+		if(dbMember.getMpassword().equals(member.getMpassword())==false)
+		{
 			return MODIFY_FAIL;
 		}
 		int row = memberDao.update(member);
@@ -85,7 +89,10 @@ public class MemberService {
 	
 	public boolean isMid(String mid) {
 		Member member = memberDao.selectByMid(mid);
-		if ( member == null ) return false;
+		if ( member == null )
+			{
+				return false;
+			}
 		return true;	
 	}
 

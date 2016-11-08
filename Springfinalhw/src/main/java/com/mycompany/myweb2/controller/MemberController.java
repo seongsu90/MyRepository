@@ -47,6 +47,14 @@ public class MemberController {
 		return "member/findMidForm";
 	}
 	
+	@RequestMapping("/info")
+	public String info(String mpassword,HttpSession session,Model model){
+		String mid = (String) session.getAttribute("login");
+		Member member=memberService.info(mid, mpassword);
+		model.addAttribute("member",member);
+		return "member/info";
+	}
+	
 	@RequestMapping(value="/findMid",method=RequestMethod.POST)
 	public String findMid(String memail,Model model,HttpSession session){
 		String mid=memberService.findMid(memail);
@@ -87,13 +95,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping("/info")
-	public String info(String mpassword,HttpSession session,Model model){
-		String mid = (String) session.getAttribute("login");
-		Member member=memberService.info(mid, mpassword);
-		model.addAttribute("member",member);
-		return "member/info";
-	}
+	
 	
 	
 }

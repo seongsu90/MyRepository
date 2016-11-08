@@ -185,7 +185,7 @@
 				  <c:if test="${login!=null}">
 					<a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout"><font color=#FFFFFF>로그아웃</font></a><br/> <!-- 표현식 -->
 				  </c:if>
-				2. <a href="${pageContext.servletContext.contextPath}/freeboard/list"><font color=#FFFFFF>자유 게시판</font></a><br/> <!-- 표현 언어라고 한다. -->
-				3. <a href="${pageContext.servletContext.contextPath}/photoboard/list"><font color=#FFFFFF>포토 게시판</font></a><br/>
+				<%-- 2. <a href="${pageContext.servletContext.contextPath}/freeboard/list"><font color=#FFFFFF>자유 게시판</font></a><br/> <!-- 표현 언어라고 한다. --> --%>
+				2. <a href="${pageContext.servletContext.contextPath}/photoboard/list"><font color=#FFFFFF>포토 게시판</font></a><br/>
 	</body>
 </html>
